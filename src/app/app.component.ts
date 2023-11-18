@@ -49,6 +49,7 @@ export class AppComponent {
       const paramName = parameters[index].match(/->\s*(.*?)\s*\[/)
 
       if(integerParams.includes(paramName![1])) {
+        index++;
         return replacement ? replacement[1] : '?';
       } else if(dateParams.includes(paramName![1])) {
         replacement![1] = this.convertDate(replacement![1]);
